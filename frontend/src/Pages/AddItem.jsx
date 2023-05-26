@@ -3,10 +3,20 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form"; // for Form related activities we need this
+import axios from "axios"; //HTTP client and send data to backend
 
 export default function AddItem() {
   const { register, handleSubmit } = useForm(); //hook to register form
-  const onFormSubmit = (data) => console.log(data);// to convert into json data after submitting form
+  const onFormSubmit = async (data) => {
+    // to convert into json data after submitting form
+    console.log(data);
+
+    try {
+      await axios.post("http://localhost:8745/api/products", data); //same as thunder client. sendind data to backend
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const onErrors = (errors) => console.error(errors); // if any error happens then this will activate
 
