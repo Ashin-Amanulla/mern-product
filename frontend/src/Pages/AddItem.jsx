@@ -2,13 +2,13 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"; // for Form related activities we need this
 
 export default function AddItem() {
-  const { register, handleSubmit } = useForm();
-  const onFormSubmit = (data) => console.log(data);
+  const { register, handleSubmit } = useForm(); //hook to register form
+  const onFormSubmit = (data) => console.log(data);// to convert into json data after submitting form
 
-  const onErrors = (errors) => console.error(errors);
+  const onErrors = (errors) => console.error(errors); // if any error happens then this will activate
 
   return (
     <div>
