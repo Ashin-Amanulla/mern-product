@@ -12,6 +12,7 @@ app.use(express.static('public')); //! to serve static files
 // DB 
 require('./dB') //!mongoose DB connection folder is called here hen server starts up
 
+app.use('')
 
 
 app.listen(PORT,()=>{

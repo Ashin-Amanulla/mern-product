@@ -12,7 +12,7 @@ export default function AddItem() {
     console.log(data);
 
     try {
-      await axios.post("http://localhost:8745/api/products", data); //same as thunder client. sendind data to backend
+      await axios.post("http://localhost:8745/products", data); //same as thunder client. sendind data to backend
     } catch (error) {
       console.log(error);
     }
