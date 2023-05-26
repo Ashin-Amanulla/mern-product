@@ -11,10 +11,10 @@ app.use(express.static('public')); //! to serve static files
 
 // DB 
 require('./dB') //!mongoose DB connection folder is called here hen server starts up
-const PRODUCT = require('./product')
+const PRODUCT = require('./model/product')
 
-
-app.post('/product',async (req,res)=>{
+// To add product details coming from front end to backend database 
+app.post('/products',async (req,res)=>{
     try {
         console.log(req.body);
         let item = req.body;
